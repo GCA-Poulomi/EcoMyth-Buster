@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMyth Buster</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e0f7fa, #e0ffe0);
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #00796b;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .myth {
+            padding: 20px;
+            margin: 10px 0;
+            background: #fce4ec;
+            border: 2px solid #e91e63;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .myth:hover {
+            background: #f8bbd0;
+        }
+
+        .fact {
+            padding: 20px;
+            margin: 10px 0;
+            background: #e8f5e9;
+            border: 2px solid #388e3c;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .fact h2 {
+            color: #388e3c;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EcoMyth Buster</h1>
+        <p>Tap on a myth to reveal the science-based fact behind it.</p>
+
+        <div class="myth" onclick="revealFact(0)">
+            <strong>Myth:</strong> Climate change is just a natural cycle of the Earth.
+        </div>
+        <div class="fact" id="fact-0">
+            <h2>Fact:</h2>
+            <p>While natural cycles do influence climate, the current changes are happening at an unprecedented rate due to human activities like burning fossil fuels and deforestation.</p>
+        </div>
+
+        <div class="myth" onclick="revealFact(1)">
+            <strong>Myth:</strong> Renewable energy is unreliable and can’t replace fossil fuels.
+        </div>
+        <div class="fact" id="fact-1">
+            <h2>Fact:</h2>
+            <p>Advances in technology have made renewable energy sources like solar and wind reliable, cost-effective, and capable of providing consistent power with proper energy storage systems.</p>
+        </div>
+
+        <div class="myth" onclick="revealFact(2)">
+            <strong>Myth:</strong> The planet isn’t really warming; it’s just weather variability.
+        </div>
+        <div class="fact" id="fact-2">
+            <h2>Fact:</h2>
+            <p>Weather variability happens over days or weeks, while climate change refers to long-term trends. Data shows a clear increase in global temperatures over the past century.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Designed to spread awareness and combat misinformation about climate change.</p>
+    </footer>
+
+    <script>
+        function revealFact(index) {
+            const factDiv = document.getElementById(`fact-${index}`);
+            factDiv.style.display = factDiv.style.display === 'none' || factDiv.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
